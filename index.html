@@ -15,8 +15,12 @@
         
         .header {
           overflow: hidden;
-          background-color: #f1f1f1;
-          padding: 20px 10px;
+          background-image: url(https://i.postimg.cc/q7TxS3b5/flip-flops.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          /* background-color: #f1f1f1; */
+          /* padding: 20px 10px; */
+          padding: 60px;
         }
         
         #headerLogo {
@@ -50,7 +54,7 @@
         }
         
         @media screen and (max-width: 500px) {
-          .header a {
+          .header #headerLogo {
             float: none;
             display: block;
             text-align: left;
@@ -102,9 +106,8 @@
           </div>
       </div>
 
-
-    <div id="main-box" class="container">
-      <div>
+    <div id="main-box" class="container mb-5">
+      <div class="container w-50 mb-5 mt-5">
         <label for="" class="form-label">Sort by category</label>
         <select name="categorySort" id="categorySort" class="form-select" onchange="categorySort()">
           <option value="All">All</option>
