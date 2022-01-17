@@ -71,7 +71,7 @@
 
     <!-- document.querySelector("#main-box").innerHTML +=` -->
     <div class="header">
-      <a id="headerLogo" href="#default" class="logo">Shooo Shop!</a>
+      <a id="headerLogo" href="index.html" class="logo">Shooo Shop!</a>
       <div class="header-right">
         <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#addModal">Add Product</button>
         <a href="cart.html" class="btn btn-danger btn-lg">
@@ -90,13 +90,13 @@
                   </div>
                   <div class="modal-body">
                       <label for="continrnt">Image:</label>
-                      <input type="text" class="form-control w-50 mb-2" id="img" placeholder="Image URL" autofocus><br>
+                      <input type="text" class="form-control w-50 mb-2" id="img" placeholder="Image URL" required autofocus><br>
                       <label for="continrnt">Title:</label>
-                      <input type="text" class="form-control w-50 mb-2" id="title" placeholder="Enter title"><br>
+                      <input type="text" class="form-control w-50 mb-2" id="title" placeholder="Enter title" required><br>
                       <label for="continrnt">Category:</label>
-                      <input type="text" class="form-control w-50 mb-2" id="category" placeholder="Enter category"><br>
+                      <input type="text" class="form-control w-50 mb-2" id="category" placeholder="Enter category" required><br>
                       <label for="continrnt">Price:</label>
-                      <input type="text" class="form-control w-50 mb-2" id="price" placeholder="Enter price">
+                      <input type="text" class="form-control w-50 mb-2" id="price" placeholder="Enter price" required>
                   </div>
                   <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

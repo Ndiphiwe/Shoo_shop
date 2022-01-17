@@ -30,7 +30,12 @@ function showcart(cart){
 
     document.querySelector("#cart").innerHTML += `
         <h2>Total is = R${calculateTotal()}</h2>
-    `;
+
+        <div class="d-grid gap-2 mt-4 col-6 mx-auto">
+            <button type="button" class="btn btn-primary btn-lg" onclick="checkout()">Checkout</button>
+        </div>
+    
+        `;
     
 }
 
@@ -58,4 +63,13 @@ function calculateTotal(){
     }))
     return total;
 }
-// console.log(calculateTotal());
+
+function checkout(){
+    let text = `Your total amount is R${calculateTotal()}.\nAre you sure you want to checkout?`;
+    if(calculateTotal() == 0){
+        alert("You didn't add anything to cart")
+    }else if (confirm(text) == true) {
+        localStorage.removeItem("cart");
+        location.reload();
+    }
+}
