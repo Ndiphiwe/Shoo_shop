@@ -24,7 +24,6 @@ function showcart(cart){
                 </div>
             </div>
         </div>
-
         `;
     });
 
