@@ -31,7 +31,7 @@ function showcart(cart){
         <h2>Total is = R${calculateTotal().toFixed(2)}</h2>
 
         <div class="d-grid gap-2 mt-4 col-6 mx-auto">
-            <button type="button" class="btn btn-primary btn-lg" onclick="checkout()">Checkout</button>
+            <button type="button" class="btn btn-primary btn-lg mb-4" onclick="checkout()">Checkout</button>
         </div>
     
         `;
