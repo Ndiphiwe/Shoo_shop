@@ -48,7 +48,7 @@ function showProducts(products){
             <div/>
             <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal${index}">Edit</button>
             <button class="btn btn-outline-danger" onclick="deleteProduct(${index})">Delete</button>
-            <button class="btn btn-outline-success mt-1" onclick="addToCart(${index})">Add to cart</button>
+            <button class="btn btn-success mt-1" onclick="addToCart(${index})">Add to cart</button>
         </div>
         </div>
     

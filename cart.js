@@ -18,7 +18,7 @@ function showcart(cart){
                     <div>
                         <input type="number" name="Quantity" class="form-control mb-2" id="quantity${index}" min="1" value="${cart.qty}" onchange="updateCart(${index})">
                     <div/>
-                    <p>Total = R${parseInt(cart.qty * cart.price)}</p>
+                    <p>Total = R${parseFloat(cart.qty * cart.price).toFixed(2)}</p>
                     <button class="btn btn-danger mt-2" onclick="removeProduct(${index})">Remove</button>
                 </div>
                 </div>
@@ -28,7 +28,7 @@ function showcart(cart){
     });
 
     document.querySelector("#cart").innerHTML += `
-        <h2>Total is = R${calculateTotal().toFixed(2)}</h2>
+        <h2>Total is = R${calculateTotal()}</h2>
 
         <div class="d-grid gap-2 mt-4 col-6 mx-auto">
             <button type="button" class="btn btn-primary btn-lg mb-4" onclick="checkout()">Checkout</button>
@@ -64,7 +64,7 @@ function calculateTotal(){
     cart.forEach((product => {
         total = total + product.price * product.qty;
     }))
-    return total;
+    return total.toFixed(2);
 }
 
 function checkout(){
