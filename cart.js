@@ -51,9 +51,13 @@ function updateCart(index){
 }
 
 function removeProduct(index){
+    let warning = "Are you sure you want to remove this item";
+    if(confirm(warning) == true){
     cart.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(cart));
     showcart(cart);
+    }
+    
 }
 
 function calculateTotal(){
@@ -70,6 +74,7 @@ function checkout(){
         alert("You didn't add anything to cart")
     }else if (confirm(text) == true) {
         localStorage.removeItem("cart");
+        alert("You have checked out successfully!");
         location.reload();
     }
 }

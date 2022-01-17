@@ -46,9 +46,9 @@ function showProducts(products){
                 Quantity:
                 <input type="number" name="Quantity" class="form-control mb-2" id="quantity${index}" min="1" value="1">
             <div/>
-            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal${index}">Edit</button>
-            <button class="btn btn-danger" onclick="deleteProduct(${index})">Delete</button>
-            <button class="btn btn-success mt-1" onclick="addToCart(${index})">Add to cart</button>
+            <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal${index}">Edit</button>
+            <button class="btn btn-outline-danger" onclick="deleteProduct(${index})">Delete</button>
+            <button class="btn btn-outline-success mt-1" onclick="addToCart(${index})">Add to cart</button>
         </div>
         </div>
     
@@ -88,20 +88,28 @@ function createProduct(){
     let category = document.querySelector("#category").value;
     let price = document.querySelector("#price").value;
 
-    products.push({
+    try {
+        if(!img, !title, !category, !price)throw new Error("Please enter all product details")
+        products.push({
         title: title,
         category,
         price,
         img
-    })
+    });
     localStorage.setItem("products", JSON.stringify(products))
     showProducts(products);
+    } catch (error) {
+        alert(error)
+    }
 }
 
 function deleteProduct(index){
+    let warning = "Are you sure you want to delete this product";
+    if(confirm(warning) == true){
     products.splice(index, 1);
     localStorage.setItem("products", JSON.stringify(products))
-    showProducts(products);
+    showProducts(products);   
+    }
 }
 
 function updateProduct(index){
